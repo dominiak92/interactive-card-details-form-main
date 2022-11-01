@@ -254,3 +254,12 @@ let cleaveYear = new Cleave('.card-year-input', {
     date: true,
     datePattern: ['y']
 });
+// MAXLENGTH PROBLEM ON MOBILE 
+const input = document.querySelector('.card-holder-input');;
+const max = Number(input.getAttribute('maxlength'));
+
+input.addEventListener('keyup', function() {
+    if (this.value.length > max) {
+      this.value = this.value.substr(0, max)
+    }
+});
