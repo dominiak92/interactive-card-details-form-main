@@ -66,8 +66,8 @@
           <div class="form-control">
             <label for="cardholder"><p>CARDHOLDER NAME</p></label>
             <input
-              type="text"
-              onKeyPress="if(this.value.length==28) return false;"
+              type="tel"
+              maxlength="28"
               id="cardholder"
               pattern="^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$"
               class="card-holder-input"
