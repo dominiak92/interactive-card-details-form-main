@@ -99,7 +99,7 @@
                   pattern="\d*"
                   maxlength="2"
                 />
-              <div class="yy-error"><p>CAN'T BE BLANK</p></div>
+              <div class="yy-error"><p>CAN'T BE BLANK<br>OR YEAR LESS THAN <span id="year"></span></p></div>
                 <input
                   type="tel"
                   pattern="\d*"
@@ -128,6 +128,14 @@
         </form>
       </section>
       <!-- Completed state start -->
+      <section class="completed-state">
+<img src="images/icon-complete.svg" alt="">
+<h2>THANK YOU!</h2>
+<p>We've added your card details</p>
+<button class="continue" onClick="window.location.href=window.location.href">Continue</button>
+
+
+      </section>
     </div>
     <!-- <div class="attribution">
       Challenge by

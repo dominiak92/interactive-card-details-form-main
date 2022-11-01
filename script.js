@@ -37,7 +37,16 @@ const cvcError = document.querySelector('.cvc-error');
 
 //FORM
 
-const form = document.querySelector('#form')
+const form = document.querySelector('#form');
+
+//WRAPPER FORM
+const formWrapper = document.querySelector('.form-wrapper');
+
+//COMPLETED STATE
+const completedState = document.querySelector('.completed-state');
+
+//PRZYCISK CONTINUE W COMPLETED STATE
+const continueBtn = document.querySelector('.continue')
 
 //----------------- KARTA ---------------
 
@@ -82,6 +91,7 @@ cardName.oninput = () =>{
     cvc.oninput = () =>{
         cvcExample.innerText = cvc.value;
     };
+
 //NASLUCHIWANIE NA FORMULARZ
     form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -91,7 +101,9 @@ cardName.oninput = () =>{
     validateCvc();
     validateCardNumber();
     validateYear();
-    
+    //aktualny rok wyswietlany w error msg
+    document.querySelector("#year").innerHTML = new Date().getFullYear();
+//test
     console.log(validateCardName() + ' nazwa karty');
     console.log(validateMonth() + ' miesiac karty');
     console.log(validateYear() + ' rok karty');
@@ -104,8 +116,10 @@ cardName.oninput = () =>{
     validateCvc(true) &&
     validateCardNumber(true) &&
     validateYear(true)){
-        alert('GITARA BYKU')
-       }else console.log('Zostajemy');
+        console.log(completedState)
+        formWrapper.style.display = "none";
+        completedState.style.display = "flex"
+       }else formWrapper.style.display = "flex";
 
     });
 
@@ -123,7 +137,7 @@ numberError.classList.add('active');
 cardNumberExample.innerText = "0000 0000 0000 0000";
 cardNumber.style.border = "1px solid hsl(0, 100%, 66%)";
 return false;
-}else if (cardNumberValue.length < 10) {
+}else if (cardNumberValue.length < 15) {
     numberError.classList.add('active');
     cardNumberExample.innerText = "0000 0000 0000 0000";
     cardNumber.style.border = "1px solid hsl(0, 100%, 66%)";
@@ -142,15 +156,10 @@ cardName.style.border = "1px solid hsl(0, 100%, 66%)";
 return false;
 } else if (
 cardNameValue.length < 6 || !cardName.value.includes(' ')) {
-    nameError.classList.add("active");
-    cardNameExample.innerText = "JANE APPLESEED";
-    cardName.style.border = "1px solid hsl(0, 100%, 66%)";
-    return false;}
-// } else if (cardName.value.includes(' ')){
-//     nameError.classList.remove("active");
-// cardName.style.border = "1px solid hsl(270, 3%, 87%)"
-//     return true;
-// }
+nameError.classList.add("active");
+cardNameExample.innerText = "JANE APPLESEED";
+cardName.style.border = "1px solid hsl(0, 100%, 66%)";
+return false;}
 else {nameError.classList.remove("active");
 cardName.style.border = "1px solid hsl(270, 3%, 87%)";
 return true};}
@@ -169,7 +178,7 @@ return true;}}
 
     validateYear = () => {
         //CZY YEAR MA WARTOSC
-if(cardYearValue === ''){
+if(cardYearValue === '' || cardYearValue < 22){
 cardYear.style.border = "1px solid hsl(0, 100%, 66%)";
 yearError.classList.add("active");
 cardYearExample.innerText = "00";
@@ -192,11 +201,13 @@ cvc.style.border = "1px solid hsl(270, 3%, 87%)";
 return true;};}
     };
 
-    // redirect = () => {
-    //    if (validateCardName(true) && validateMonth(true) && validateCvc(true) && validateCardNumber(true)){
-    //     console.log('Przekierowanie')
-    //    }else console.log('Zostajemy');
-    // }
+// PRZYCISK CONTIUNE W COMPLETED STATE 
+continueBtn.addEventListener('click', () => {
+formWrapper.style.display = "flex";
+completedState.style.display = "none"});
+
+
+// CLEAVE.JS LIBRARY - WYSWIETLANIE ICO NA KARCIE
 new Cleave('.card-number-input', {
     creditCard: true,
     delimiter: ' ',
