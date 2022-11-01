@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    max-width: 100%;
+}
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+}
+/* TŁO KART */
+.top-background {
+    width: 100%;
+    height:64vw;
+    background-image: url(images/bg-main-mobile.png);
+    background-position: center;
+    background-size:cover;
+}
+/*KARTA TYL*/
+.card-reverse {
+    position: relative;
+    top: 8vw;
+    left: 20vw;
+    width: 76vw;
+    height: 45vw;
+    background-image: url(images/bg-card-back.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+/*KOD CVC NA KARCIE*/
+.reverse-cvc {
+    position:relative;
+    width: 8vw;
+    top: 19vw;
+    bottom: 0;
+    right: auto;
+    left: 60vw;
+    font-size: 2.5vw;
+    color: hsl(0, 0%, 100%);
+}
+/* KARTA FRONT*/
+.card-front {
+    position:absolute;
+    top: 34vw;
+    left: 4vw;
+    width: 76vw;
+    height: 45vw;
+    background-image: url(images/bg-card-front.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+/* WRAPPER DO DANYCH KARTY */
+.cardinfo-wrapper {
+    padding: 5vw;
+}
+/* VVVV DANE KARTY VVVV */
+
+/*NUMER KARTY*/
+.front-cardnumb {
+color: white;
+font-size: 5vw;
+letter-spacing: 0.5vw;;
+}
+/* IMIE NAZWISKO & DATA */
+.name-date-wrapper {
+    display:flex;
+    justify-content: space-between;
+    padding-top: 4vw;
+    font-size: 2.6vw;
+    letter-spacing: 0.3vw;
+    color: white;
+}
+/* ico na card front */
+.ico-wrapper {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4.5vw;
+}
+.circle {
+    position: relative;
+    border-radius: 50%;
+    background-color: white;
+    width: 8vw;
+    height: 8vw;
+}
+.round-border{
+    order: 1;
+    margin-left: 3.3vw;
+    position: relative;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid white;
+    width: 3.5vw;
+    height: 3.5vw;
+}
+
+/* SEKCJA INPUT!!! */
+
+.form-wrapper {
+    display:flex;
+    flex-direction: column;
+    padding: 6vw;
+    padding-top: 24vw;
+    font-size: 6vw;
+}
+form p{
+    font-size: 3.5vw;
+    letter-spacing: 0.4vw;
+    margin-bottom: 2vw;
+}
+/* Pierwsze dwa inputy */
+#cardholder, #cardnumber {
+    box-sizing: border-box;
+    padding:2vw;
+    font-size: 6vw;
+    width: 87vw;
+    height: 11vw;
+    border-radius: 2vw;
+    border: 1px solid hsl(270, 3%, 87%);
+}
+#cardholder:focus {
+    border: 1px solid;
+    border-color: linear-gradient(0deg, rgba(96,5,148,1) 45%, rgba(100,72,240,1) 100%);
+}
+#cardnumber:focus {
+    font-size: 6vw;
+    border: 1px solid;
+    border-color: linear-gradient(0deg, rgba(96,5,148,1) 45%, rgba(100,72,240,1) 100%);
+}
+/* PLACEHOLDER DLA INPUTOW */
+input::placeholder{
+    font-size: 5vw;
+    color: hsl(270, 3%, 87%);
+    font-family: 'Space Grotesk', sans-serif;
+    padding-left: 2vw;
+    text-transform:none
+}
+
+input {
+    margin-bottom: 6vw;
+    transition: 0.5s;
+    outline: none
+}
+input:focus {
+    /* outline: 3px solid linear-gradient(0deg, rgba(96,5,148,1) 45%, rgba(100,72,240,1) 100%); */
+    border: 3px solid red;
+  }
+/* WRAPPER INPUT DATE ORAZ CVC */
+.date-cvc-wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+   flex-wrap: no-wrap;
+}
+.mm-yy{
+    display: flex;
+    justify-content: space-between;
+    width: 40vw;
+    height: 17vw;
+    margin-bottom: 0;
+}
+#expmonth, #expyear{
+box-sizing: border-box;
+padding:2vw;
+min-width: 0;
+font-size: 6vw;
+border: 1px solid hsl(270, 3%, 87%);
+border-radius: 2vw;
+flex-basis: 19vw;
+}
+#expmonth:focus {
+border: 1px solid;
+border-color: linear-gradient(0deg, rgba(96,5,148,1) 45%, rgba(100,72,240,1) 100%); 
+}
+#expyear:focus {    
+border: 1px solid;
+border-color: linear-gradient(0deg, rgba(96,5,148,1) 45%, rgba(100,72,240,1) 100%); }
+#cvc {
+box-sizing: border-box;
+padding:2vw;
+font-size: 6vw;;
+border: 1px solid hsl(270, 3%, 87%);
+height: 10.5vw;
+width: 44vw;
+border-radius: 2vw;
+}
+#cvc:focus{
+    border: 1px solid;
+    border-color: linear-gradient(0deg, rgba(96,5,148,1) 45%, rgba(100,72,240,1) 100%); 
+}
+button{
+    height: 14vw;
+    border:none;
+    border-radius: 2vw;
+    margin-top: 2vw;
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    width: 100%;
+    font-size: 5vw;
+    cursor: pointer;
+}
+/* ERRORS */
+.name-error p {
+    display:none;
+    font-size: 2.5vw;
+    position:relative;
+    margin-top: -5vw;
+    color: red;
+}
+.format-error p {
+    display:none;
+    font-size: 2.5vw;
+    position:relative;
+    margin-top: -5vw;
+    color: red;
+}
+.name-error.active p{
+    display:block;
+}
+.format-error.active p{
+    display:block;
+}
+.number-error p {
+    display:none;
+    font-size: 2.5vw;
+    position:relative;
+    margin-top: -5vw;
+    color: red;
+}
+
+.number-error.active p{
+    display:block;
+}
+.mm-error p {
+    display:none;
+    position: absolute;
+    font-size: 2.5vw;
+    margin-top: -5vw;
+    color: red;
+}
+
+.mm-error.active p{
+    display:block;
+}
+.yy-error p {
+    display: none;
+    position: absolute;
+    font-size: 2.5vw;
+    left: 7vw;
+    margin-top: 12vw;
+    color: red;
+}
+
+.yy-error.active p{
+    display:block;
+}
+.cvc-error p {
+    display:none;
+    position: absolute;
+    left: 50vw;
+    font-size: 2.5vw;
+    margin-top: -5vw;
+    color: red;
+}
+.cvc-error.active p{
+    display:block;
+}
+/* LOGA PRODUCENTOW KART W KARCIE */
+.card-front i {
+    display:none;
+}
+.card-front i.active {
+    display:block;
+    position: absolute;
+    font-size: 10vw;
+    top: 3vw;
+    left: 5vw;
+    color: white;
+}
