@@ -59,8 +59,8 @@
               </p>
             </div>
           </div>
-        </div>
       </div>
+    </div>
       <section class="form-wrapper">
         <form class="form" id="form">
           <div class="form-control">
@@ -68,7 +68,6 @@
             <input
               type="text"
               maxlength="28"
-              onKeyPress="if(this.value.length==28) return false;"
               id="cardholder"
               pattern="^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$"
               class="card-holder-input"
@@ -81,6 +80,7 @@
             <label for="cardnumber"><p>CARD NUMBER</p></label>
             <input
               type="tel"
+              maxlength="19"
               id="cardnumber"
               class="card-number-input"
               placeholder="e.g. 1234 5678 9123 0000"
@@ -100,7 +100,7 @@
                   pattern="\d*"
                   maxlength="2"
                 />
-              <div class="yy-error"><p>CAN'T BE BLANK<br>OR YEAR LESS THAN <span id="year"></span></p></div>
+              
                 <input
                   type="tel"
                   pattern="\d*"
@@ -111,6 +111,7 @@
                 />
               </div>
               <div class="mm-error"><p>CAN'T BE BLANK</p></div>
+              <div class="yy-error"><p>CAN'T BE BLANK<br>OR YEAR LESS THAN <span id="year"></span></p></div>
             </div>
             <div class="cvc-wrap">
               <label for="cvc"><p>CVC</p></label>

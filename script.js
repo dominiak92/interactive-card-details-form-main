@@ -74,9 +74,7 @@ cardName.oninput = () =>{
 
 //WYSWIETLANIE NUMERU KARTY NA KARCIE
     cardNumber.oninput = () =>{
-        cardNumberExample.innerText = cardNumber.value.toString().split('').slice(0, -1).join('');
-
-        //.toString().match(/.{4}/g).join(' ')
+        cardNumberExample.innerText = cardNumber.value;
     };
 //WYSWIETLANIE MIESIACA WAZNOSCI NA KARCIE
     cardMonth.oninput = () =>{
@@ -104,12 +102,12 @@ cardName.oninput = () =>{
     //aktualny rok wyswietlany w error msg
     document.querySelector("#year").innerHTML = new Date().getFullYear();
 //test
-    console.log(validateCardName() + ' nazwa karty');
-    console.log(validateMonth() + ' miesiac karty');
-    console.log(validateYear() + ' rok karty');
-    console.log(validateCardNumber() + ' numer karty');
-    console.log(validateCvc() + ' kod cvc');
-    console.log(cardName.value.includes(' '))
+    // console.log(validateCardName() + ' nazwa karty');
+    // console.log(validateMonth() + ' miesiac karty');
+    // console.log(validateYear() + ' rok karty');
+    // console.log(validateCardNumber() + ' numer karty');
+    // console.log(validateCvc() + ' kod cvc');
+    // console.log(cardName.value.includes(' '))
 
     if (validateCardName(true) &&
     validateMonth(true) &&
@@ -156,6 +154,7 @@ cardName.style.border = "1px solid hsl(0, 100%, 66%)";
 return false;
 } else if (
 cardNameValue.length < 6 || !cardName.value.includes(' ')) {
+    console.log(cardName.value)
 nameError.classList.add("active");
 cardNameExample.innerText = "JANE APPLESEED";
 cardName.style.border = "1px solid hsl(0, 100%, 66%)";
@@ -253,4 +252,13 @@ let cleaveMonth = new Cleave('.card-month-input', {
 let cleaveYear = new Cleave('.card-year-input', {
     date: true,
     datePattern: ['y']
+});
+// MAXLENGTH PROBLEM ON MOBILE 
+const input = document.querySelector('.card-holder-input');;
+const max = Number(input.getAttribute('maxlength'));
+
+input.addEventListener('keyup', function() {
+    if (this.value.length > max) {
+      this.value = this.value.substr(0, max)
+    }
 });

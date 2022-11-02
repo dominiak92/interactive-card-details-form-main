@@ -120,11 +120,12 @@ form p{
     border: 1px solid hsl(270, 3%, 87%);
 }
 #cardholder:focus {
+    font-size: 6.5vw;
     border: 1px solid;
     border-color: linear-gradient(0deg, rgba(96,5,148,1) 45%, rgba(100,72,240,1) 100%);
 }
 #cardnumber:focus {
-    font-size: 6vw;
+    font-size: 6.5vw;
     border: 1px solid;
     border-color: linear-gradient(0deg, rgba(96,5,148,1) 45%, rgba(100,72,240,1) 100%);
 }
@@ -138,6 +139,7 @@ input::placeholder{
 }
 
 input {
+    font-family: 'Space Grotesk', sans-serif;
     margin-bottom: 6vw;
     transition: 0.5s;
     outline: none
@@ -171,10 +173,12 @@ border-radius: 2vw;
 flex-basis: 19vw;
 }
 #expmonth:focus {
+font-size: 6.5vw;
 border: 1px solid;
 border-color: linear-gradient(0deg, rgba(96,5,148,1) 45%, rgba(100,72,240,1) 100%); 
 }
-#expyear:focus {    
+#expyear:focus {
+font-size: 6.5vw;    
 border: 1px solid;
 border-color: linear-gradient(0deg, rgba(96,5,148,1) 45%, rgba(100,72,240,1) 100%); }
 #cvc {
@@ -187,6 +191,7 @@ width: 44vw;
 border-radius: 2vw;
 }
 #cvc:focus{
+    font-size: 6.5vw;
     border: 1px solid;
     border-color: linear-gradient(0deg, rgba(96,5,148,1) 45%, rgba(100,72,240,1) 100%); 
 }
@@ -249,7 +254,7 @@ button{
     position: absolute;
     font-size: 2.5vw;
     left: 7vw;
-    margin-top: 12vw;
+    margin-top: -5vw;
     color: red;
 }
 
@@ -297,9 +302,336 @@ align-items: center;
     letter-spacing: 1.2vw;
 }
 .completed-state p{
+    color: hsl(279, 6%, 55%);
     font-size: 4.8vw;
 }
 .completed-state img {
     width: 21vw;
     height: 21vw;
 }
+
+
+/* MEDIA QUERIES DLA URZADZEN OD 992px */
+@media (min-width: 992px) {
+.page-wrapper {
+    transform: translateY(-12%);
+    display:flex;
+    flex-direction: row;
+}
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    overflow:hidden
+}
+/* TŁO KART */
+
+.top-background {
+    width: 60vw;
+    height:64vw;
+    flex-basis: 33.5vw;
+    background-image: url(images/bg-main-desktop.png);
+    background-position: center;
+    background-size:cover;
+}
+
+/*KARTA TYL*/
+.card-reverse {
+    position: relative;
+    top: 32.6vw;
+    left: 18vw;
+    width: 31vw;
+    height: 17vw;
+    background-image: url(images/bg-card-back.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+/*KOD CVC NA KARCIE*/
+.reverse-cvc {
+    position:relative;
+    width: 4vw;
+    top: 7.6vw;
+    bottom: 0;
+    right: auto;
+    left: 24.5vw;
+    font-size: 1.2vw;
+    color: hsl(0, 0%, 100%);
+}
+/* KARTA FRONT*/
+.card-front {
+    position:absolute;
+    top: 13vw;
+    left: 11.3vw;
+    width: 31vw;
+    height: 17vw;
+    background-image: url(images/bg-card-front.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+/* WRAPPER DO DANYCH KARTY */
+.cardinfo-wrapper {
+    padding: 2.5vw;
+}
+/* VVVV DANE KARTY VVVV */
+
+/*NUMER KARTY*/
+.front-cardnumb {
+color: white;
+font-size: 2vw;
+letter-spacing: 0.2vw;;
+}
+/* IMIE NAZWISKO & DATA */
+.name-date-wrapper {
+    display:flex;
+    justify-content: space-between;
+    padding-top: 2.1vw;
+    font-size: 1vw;
+    letter-spacing: 0.1vw;
+    color: white;
+}
+/* ico na card front */
+.ico-wrapper {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.8vw;
+}
+.circle {
+    position: relative;
+    border-radius: 50%;
+    background-color: white;
+    margin-left: 0.5vw;
+    width: 3.3vw;
+    height: 3.3vw;
+}
+.round-border{
+    order: 1;
+    margin-left: 1vw;
+    position: relative;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid white;
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
+/* SEKCJA INPUT!!! */
+
+.form-wrapper {
+    box-sizing: content-box;
+    display:flex;
+    flex-direction: column;
+    margin-left: 18vw;
+    margin-top: 9vw;
+    padding-top: 10vw;
+    font-size: 2vw;
+}
+form p{
+    font-size: 0.9vw;
+    letter-spacing: 0.1vw;
+    margin-bottom: 0.5vw;
+}
+/* Pierwsze dwa inputy */
+#cardholder, #cardnumber {
+    box-sizing: border-box;
+    margin-bottom: 1.8vw;
+    padding:1vw;
+    font-size: 1.2vw;
+    width: 26.5vw;
+    height: 3vw;
+    border-radius: 0.5vw;
+    border: 1px solid hsl(270, 3%, 87%);
+}
+#cardholder:focus {
+    
+    font-size: 1.3vw;
+    border: 1px solid;
+    border-color: linear-gradient(0deg, rgba(96,5,148,1) 45%, rgba(100,72,240,1) 100%);
+}
+#cardnumber:focus {
+    font-size: 1.3vw;
+    border: 1px solid;
+    border-color: linear-gradient(0deg, rgba(96,5,148,1) 45%, rgba(100,72,240,1) 100%);
+}
+/* PLACEHOLDER DLA INPUTOW */
+input::placeholder{
+    font-size: 1.3vw;
+    color: hsl(270, 3%, 87%);
+    font-family: 'Space Grotesk', sans-serif;
+    padding-left: 0.2vw;
+    text-transform:none
+}
+
+input {
+    font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: 1vw;
+    transition: 0.5s;
+    outline: none
+}
+input:focus {
+    /* outline: 3px solid linear-gradient(0deg, rgba(96,5,148,1) 45%, rgba(100,72,240,1) 100%); */
+    border: 3px solid red;
+  }
+/* WRAPPER INPUT DATE ORAZ CVC */
+.date-cvc-wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+   flex-wrap: no-wrap;
+}
+.mm-yy{
+    display: flex;
+    justify-content: space-between;
+    width: 12vw;
+    height: 4vw;
+    margin-bottom: 0;
+}
+#expmonth, #expyear{
+box-sizing: border-box;
+padding:1vw;
+min-width: 0;
+font-size: 1.3vw;
+border: 1px solid hsl(270, 3%, 87%);
+border-radius: 0.5vw;
+flex-basis: 5.5vw;
+}
+#expmonth:focus {
+font-size: 1.5vw; 
+}
+#expyear:focus {
+font-size: 1.5vw;   }
+#cvc {
+box-sizing: border-box;
+padding:1vw;
+font-size: 1.3vw;
+border: 1px solid hsl(270, 3%, 87%);
+height: 3vw;
+width: 13vw;
+border-radius: 0.5vw;
+}
+#cvc:focus{
+    font-size: 1.5vw;
+    border: 1px solid;
+    border-color: linear-gradient(0deg, rgba(96,5,148,1) 45%, rgba(100,72,240,1) 100%); 
+}
+button{
+    height: 3.7vw;
+    border:none;
+    border-radius: 0.5vw;
+    margin-top: 1.94vw;
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    width: 100%;
+    font-size: 1.3vw;
+    cursor: pointer;
+}
+/* ERRORS */
+.name-error p {
+    display:none;
+    font-size: 0.7vw;
+    position:relative;
+    margin-top:-1vw;
+    color: red;
+}
+.format-error p {
+    display:none;
+    font-size: 0.7vw;
+    position:relative;
+    margin-top: -5vw;
+    color: red;
+}
+.name-error.active p{
+    display:block;
+}
+.format-error.active p{
+    display:block;
+}
+.number-error p {
+    display:none;
+    font-size: 0.7vw;
+    position:relative;
+    margin-top: -1vw;
+    color: red;
+}
+
+.number-error.active p{
+    display:block;
+}
+.mm-error p {
+    display:none;
+    position: absolute;
+    font-size: 0.7vw;
+    margin-top: -0.5vw;
+    color: red;
+}
+
+.mm-error.active p{
+    display:block;
+}
+.yy-error p {
+    display: none;
+    position: relative;
+    font-size: 0.7vw;
+    bottom: -2.5vw;
+    width: 11vw;
+    right: 10vw;
+    left: 0.01vw;
+    margin-top: -3vw;
+    color: red;
+}
+
+.yy-error.active p{
+    display:block;
+}
+.cvc-error p {
+    display:none;
+    position: absolute;
+    left: 71vw;
+    font-size: 0.7vw;
+    margin-top: -0.5vw;
+    color: red;
+}
+.cvc-error.active p{
+    display:block;
+}
+/* LOGA PRODUCENTOW KART W KARCIE */
+.card-front i {
+    display:none;
+}
+.card-front i.active {
+    display:block;
+    position: absolute;
+    font-size: 4.5vw;
+    top: 1.6vw;
+    left: 2vw;
+    color: white;
+}
+/*COMPLETED STATE*/
+.completed-state {
+display: none;
+min-height: 21vw;
+padding-top: 21vw;
+padding-left: 24.4vw;
+padding-right: 0vw;
+height: 14vw;
+justify-content: space-between;
+flex-direction: column;
+align-items: center;
+}
+.completed-state h2 {
+    font-weight: 600;
+    font-size: 1.9vw;
+    letter-spacing: .3vw;
+}
+.completed-state p{
+    font-size: 1.3vw;
+    color: hsl(279, 6%, 55%)
+}
+.completed-state img {
+    width: 5.5vw;
+    height: 5.5vw;
+}
+.completed-state button {
+    width: 26.5vw;
+}
+};
